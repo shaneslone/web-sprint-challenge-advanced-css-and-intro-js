@@ -282,7 +282,6 @@ function removeArtist(arr, index) {
   arr.splice(index, 1);
   console.log(arr);
 }
-removeArtist(artists, 0);
 
 /**
 /* Task 6: Create a function called `addArtist` that can accept an object of information and add it to the artists array. Then, add a 21st artist to the array (you) with custom information!👩‍🎨👨‍🎨
@@ -297,9 +296,20 @@ bio: Add 1-2 sentences (or use lorem ipsum)
 
 At the end, this function should return the new array with information added"*/
 
-function addArtist(/* Code here */) {
-  /* Code here */
+function addArtist(object, arr) {
+  arr.push(object);
+  return arr;
 }
+
+const newArtist = {
+  id: 20,
+  name: 'Shane Slone',
+  years: '1986 - current day',
+  genre: 'Web Design',
+  nationality: 'American',
+  bio: 'One of the future great web designers of the 21st centery.',
+};
+console.log(addArtist(newArtist, artists));
 
 /* Task 7: Create a function called lotsOfArt() that takes one argument: 
 
@@ -309,9 +319,17 @@ and returns an array with names of artists who painted more than 100 paintings.
 
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ..."Albrecht Dürer"]*/
 
-function lotsOfArt(/* Code here */) {
-  /* Code here */
+function lotsOfArt(arr) {
+  const returnArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].paintings >= 100) {
+      returnArr.push(arr[i].name);
+    }
+  }
+  return returnArr;
 }
+
+console.log(lotsOfArt(artists));
 
 // 🎨🎨 STRETCH 🎨🎨//
 
